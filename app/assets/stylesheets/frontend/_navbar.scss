@@ -1,0 +1,62 @@
+/* Navbar base */
+.custom-navbar {
+    height: 8ch;
+    backdrop-filter: blur(8px);
+    background-color: rgba(240, 249, 255, 0.7); /* Light sky-like */
+    border-bottom: 1px solid #e5e7eb;
+    transition: all 0.3s ease-in-out;
+    z-index: 1050;
+  }
+  
+  /* Gradient button */
+  .nav-gradient-btn {
+    background-image: linear-gradient(to top right, #6366f1, #0ea5e9 20%, #9333ea);
+    border-radius: 1rem;
+    transition: background-position 0.3s ease;
+  }
+  
+  .nav-gradient-btn:hover {
+    background-position: right center;
+  }
+  
+  /* Text gradient active */
+  .nav-text-gradient {
+    background: linear-gradient(to right, #6366f1, #0ea5e9, #9333ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Hover gradient text */
+  .hover-gradient-text:hover {
+    background: linear-gradient(to right, #6366f1, #0ea5e9, #9333ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Mobile menu animation */
+  .mobile-menu {
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .mobile-menu.show {
+    transform: translateX(0);
+  }
+
+  /* Keep your custom styles as-is above this */
+
+/* Animate the Bootstrap collapse transition for mobile menu */
+#mobileMenu.collapse:not(.show) {
+    transform: translateX(100%);
+    transition: transform 0.35s ease-in-out;
+  }
+  
+  #mobileMenu.collapsing {
+    height: auto;
+    transition: transform 0.35s ease-in-out;
+  }
+  
+  #mobileMenu.collapse.show {
+    transform: translateX(0);
+  }
+  
