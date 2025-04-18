@@ -1,0 +1,72 @@
+<nav id="navbar" class="navbar fixed-top d-flex justify-content-between align-items-center px-4 px-sm-5 px-md-5 shadow-sm custom-navbar">
+  <!-- Logo -->
+  <div class="d-flex align-items-center gap-2 pe-md-5">
+    <%= link_to root_path, class: "navbar-brand d-flex align-items-center text-primary fw-semibold gap-2" do %>
+      <i class="bi bi-journal-bookmark-fill fs-4"></i>
+      LearnHub
+    <% end %>
+  </div>
+
+  <!-- Hamburger toggle (Mobile only) -->
+  <button class="btn d-md-none text-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="bi bi-list fs-2"></i>
+  </button>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="collapse mobile-menu d-md-none position-fixed top-0 end-0 vh-100 bg-dark text-white shadow-lg">
+    <div class="d-flex justify-content-between align-items-center px-4 pt-4">
+      <%= link_to root_path, class: "navbar-brand d-flex align-items-center text-white fw-semibold gap-2" do %>
+        <i class="bi bi-journal-bookmark-fill fs-4"></i>
+        LearnHub
+      <% end %>
+      <button class="btn text-white" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu" aria-label="Close menu">
+        <i class="bi bi-x-lg fs-3"></i>
+      </button>
+    </div>
+
+    <hr class="mx-4 border-light">
+
+    <div class="d-flex flex-column align-items-start gap-4 p-4">
+      <ul class="nav flex-column w-100 gap-2">
+        <% nav_items = [
+          { name: "Home", path: root_path },
+          { name: "Courses", path: "#" },
+          { name: "Blog", path: "#" },
+          { name: "About", path: "#" }
+        ] %>
+
+        <% nav_items.each do |item| %>
+          <li class="nav-item">
+            <%= link_to item[:name], item[:path],
+              class: "nav-link px-0 #{current_page?(item[:path]) ? 'nav-text-gradient fw-semibold' : 'text-white'}",
+              data: { "bs-toggle": "collapse", "bs-target": "#mobileMenu" } %>
+          </li>
+        <% end %>
+      </ul>
+
+      <div class="d-flex flex-column gap-3 w-100">
+        <%= link_to "Sign In", "#", class: "btn btn-link text-decoration-none text-white hover-gradient-text fw-medium", data: { "bs-toggle": "collapse", "bs-target": "#mobileMenu" } %>
+        <%= button_tag "Get Started", class: "btn nav-gradient-btn text-white fw-semibold py-2 px-4" %>
+      </div>
+    </div>
+  </div>
+
+  <!-- Desktop Menu -->
+  <div class="d-none d-md-flex align-items-center justify-content-between gap-4">
+    <ul class="nav gap-4">
+      <% nav_items.each do |item| %>
+        <li class="nav-item">
+          <%= link_to item[:name], item[:path],
+            class: "nav-link #{current_page?(item[:path]) ? 'nav-text-gradient fw-semibold' : 'text-white'}" %>
+        </li>
+      <% end %>
+    </ul>
+
+    <div class="d-flex gap-3">
+      <%= link_to "Sign In", "#", class: "btn btn-link text-decoration-none text-white hover-gradient-text fw-medium" %>
+      <%= button_tag "Get Started", class: "btn nav-gradient-btn text-white fw-semibold py-2 px-4" %>
+    </div>
+  </div>
+</nav>
+
+<%= javascript_include_tag "navbar.js" %>

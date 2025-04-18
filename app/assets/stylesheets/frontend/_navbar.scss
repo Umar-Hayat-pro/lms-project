@@ -1,62 +1,133 @@
 /* Navbar base */
 .custom-navbar {
-    height: 8ch;
-    backdrop-filter: blur(8px);
-    background-color: rgba(240, 249, 255, 0.7); /* Light sky-like */
-    border-bottom: 1px solid #e5e7eb;
-    transition: all 0.3s ease-in-out;
-    z-index: 1050;
-  }
-  
-  /* Gradient button */
-  .nav-gradient-btn {
-    background-image: linear-gradient(to top right, #6366f1, #0ea5e9 20%, #9333ea);
-    border-radius: 1rem;
-    transition: background-position 0.3s ease;
-  }
-  
-  .nav-gradient-btn:hover {
-    background-position: right center;
-  }
-  
-  /* Text gradient active */
-  .nav-text-gradient {
-    background: linear-gradient(to right, #6366f1, #0ea5e9, #9333ea);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  /* Hover gradient text */
-  .hover-gradient-text:hover {
-    background: linear-gradient(to right, #6366f1, #0ea5e9, #9333ea);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  /* Mobile menu animation */
-  .mobile-menu {
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .mobile-menu.show {
-    transform: translateX(0);
-  }
+  height: var(--navbar-height);
+  backdrop-filter: blur(8px);
+  background-color: transparent;
+  border-bottom: 1px solid var(--navbar-border);
+  transition: all 0.3s ease-in-out;
+  z-index: 1050;
+  color: white;
+}
 
-  /* Keep your custom styles as-is above this */
+/* Navbar when scrolled */
+.custom-navbar.scrolled {
+  background-color: white !important;
+  border-color: #ddd;
+  color: #000;
+}
 
-/* Animate the Bootstrap collapse transition for mobile menu */
+.custom-navbar.scrolled .nav-link {
+  color: #000 !important;
+}
+
+.custom-navbar.scrolled .nav-link::after {
+  background-color: #000;
+}
+
+.custom-navbar.scrolled .navbar-brand {
+  color: var(--primary-color) !important;
+}
+
+/* Gradient button */
+.nav-gradient-btn {
+  background-image: linear-gradient(to top right, var(--primary-color), var(--secondary-color) 20%, var(--tertiary-color));
+  border-radius: 1rem;
+  transition: background-position 0.3s ease;
+}
+
+.nav-gradient-btn:hover {
+  background-position: right center;
+}
+
+/* Text gradient active */
+.nav-text-gradient {
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color), var(--tertiary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hover gradient text */
+.hover-gradient-text:hover {
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color), var(--tertiary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* White text with underline animation */
+.nav-link {
+  color: white !important;
+  position: relative;
+  text-decoration: none;
+}
+
+/* Remove hover effect background color */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+/* Mobile menu slide-in */
+.mobile-menu {
+  transform: translateX(100%);
+  transition: transform 0.35s ease-in-out;
+  background-color: var(--mobile-menu-bg, #111); /* dark background */
+  border-left: 2px solid var(--mobile-menu-border, #333);
+  box-shadow: 0 4px 10px var(--mobile-menu-shadow, rgba(0, 0, 0, 0.4));
+  width: 300px;
+  max-width: 100%;
+}
+
+.mobile-menu.show,
+#mobileMenu.collapse.show {
+  transform: translateX(0);
+}
+
 #mobileMenu.collapse:not(.show) {
-    transform: translateX(100%);
-    transition: transform 0.35s ease-in-out;
-  }
-  
-  #mobileMenu.collapsing {
-    height: auto;
-    transition: transform 0.35s ease-in-out;
-  }
-  
-  #mobileMenu.collapse.show {
-    transform: translateX(0);
-  }
-  
+  transform: translateX(100%);
+}
+
+#mobileMenu.collapsing {
+  height: auto;
+  transition: transform 0.35s ease-in-out;
+}
+
+/* Mobile menu text color */
+.mobile-menu .nav-link {
+  color: white !important;
+}
+
+/* Close button color */
+.btn.text-danger {
+  color: var(--secondary-color);
+}
+
+/* When navbar is scrolled */
+.custom-navbar.scrolled {
+  background-color: white !important;
+  border-color: #ddd;
+  color: #000;
+}
+
+/* Update text color on scroll */
+.custom-navbar.scrolled .nav-link {
+  color: #000 !important;
+}
+
+.custom-navbar.scrolled .nav-link::after {
+  background-color: #000;
+}
+
+.custom-navbar.scrolled .hover-gradient-text:hover {
+  -webkit-text-fill-color: transparent;
+}
+
+/* Adjust logo color if needed */
+.custom-navbar.scrolled .navbar-brand {
+  color: var(--primary-color) !important;
+}

@@ -1,0 +1,15 @@
+/* Define theme variables */
+:root {
+    --navbar-bg: rgba(240, 249, 255, 0.7); /* Light sky-like */
+    --navbar-border: #e5e7eb;
+    --navbar-height: 8ch;
+    --primary-color: #6366f1; /* Main gradient color */
+    --secondary-color: #0ea5e9; /* Second gradient color */
+    --tertiary-color: #9333ea; /* Third gradient color */
+    --hover-gradient-color: #6366f1, #0ea5e9, #9333ea; /* Hover gradient */
+    --mobile-menu-bg: #f8f9fa; /* Mobile menu background */
+    --mobile-menu-border: #dee2e6; /* Border color for mobile menu */
+    --mobile-menu-shadow: rgba(0, 0, 0, 0.1); /* Shadow for mobile menu */
+    --menu-item-hover-bg: rgba(255, 255, 255, 0.7);
+  }
+  

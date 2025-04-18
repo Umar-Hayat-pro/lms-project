@@ -1,0 +1,124 @@
+<!-- Counters Section -->
+<section class="counters-section container py-5">
+  <div class="row justify-content-center text-center">
+    <!-- Course Counter -->
+    <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+      <div class="counter-card p-4 rounded shadow-lg d-flex flex-column align-items-center">
+        <div class="counter-icon bg-primary p-3 mb-3 rounded-circle text-white">
+          <i class="bi bi-journal-bookmark-fill fs-2"></i>
+        </div>
+        <h3 class="counter-number" data-count="150">0</h3>
+        <p class="counter-label">Courses</p>
+      </div>
+    </div>
+
+    <!-- Student Counter -->
+    <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+      <div class="counter-card p-4 rounded shadow-lg d-flex flex-column align-items-center">
+        <div class="counter-icon bg-success p-3 mb-3 rounded-circle text-white">
+          <i class="bi bi-person-fill fs-2"></i>
+        </div>
+        <h3 class="counter-number" data-count="3500">0</h3>
+        <p class="counter-label">Students</p>
+      </div>
+    </div>
+
+    <!-- Post Counter -->
+    <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+      <div class="counter-card p-4 rounded shadow-lg d-flex flex-column align-items-center">
+        <div class="counter-icon bg-warning p-3 mb-3 rounded-circle text-white">
+          <i class="bi bi-pencil-fill fs-2"></i>
+        </div>
+        <h3 class="counter-number" data-count="1200">0</h3>
+        <p class="counter-label">Posts</p>
+      </div>
+    </div>
+
+    <!-- Other Counter -->
+    <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+      <div class="counter-card p-4 rounded shadow-lg d-flex flex-column align-items-center">
+        <div class="counter-icon bg-danger p-3 mb-3 rounded-circle text-white">
+          <i class="bi bi-heart-fill fs-2"></i>
+        </div>
+        <h3 class="counter-number" data-count="50">0</h3>
+        <p class="counter-label">Other</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<style>
+  /* Counters Section */
+.counters-section {
+  background-color: #f8f9fa;
+}
+
+.counter-card {
+  background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.counter-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.counter-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+.counter-label {
+  font-size: 1.2rem;
+  color: #555;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Icon styling */
+.counter-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+}
+
+.counter-icon i {
+  font-size: 2rem;
+}
+
+/* Hover effect */
+.counter-card:hover .counter-number {
+  color: #007bff;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 767px) {
+  .counter-card {
+    padding: 2rem;
+  }
+}
+
+</style>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- CounterUp Plugin -->
+<script src="https://cdn.rawgit.com/mhuggins/jquery-counterup/master/dist/jquery.counterup.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        // Apply CounterUp animation to all elements with class 'counter-number'
+        $('.counter-number').counterUp({
+            delay: 10, // Delay between each number change (in milliseconds)
+            time: 2000 // The duration of the animation (in milliseconds)
+        });
+    });
+</script>

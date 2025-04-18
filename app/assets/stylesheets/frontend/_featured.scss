@@ -1,0 +1,61 @@
+/* Courses Carousel Styles */
+.courses-carousel {
+    padding: 20px 10px;
+  }
+  
+  .courses-carousel .swiper-slide {
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .courses-carousel .swiper-slide:hover {
+    transform: translateY(-5px);
+  }
+  
+  .swiper-button-next,
+  .swiper-button-prev {
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    color: var(--primary-color);
+  }
+  
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 1rem;
+  }
+  
+  /* Card hover effects */
+  .card {
+    transition: all 0.3s ease;
+    border-radius: 0.75rem;
+    overflow: hidden;
+  }
+  
+  .card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-img-top {
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  /* Post card styles */
+  .post-card .card-img-top {
+    height: 200px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .courses-carousel {
+      padding: 10px 5px;
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none;
+    }
+  }
